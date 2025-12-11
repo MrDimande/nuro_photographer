@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   NURO DE SOUSA — EDITORIAL PORTFOLIO
+   Premium CSS Effects (Zero JS)
+   ============================================ */
+
+/* Base reset & typography */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-nuro-black text-nuro-light font-sans;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-nuro-light/20 text-nuro-white;
+  }
+}
+
+/* ============================================
+   LIGHT SWEEP EFFECT — Luxury title animation
+   Subtle horizontal shimmer, Apple-inspired
+   ============================================ */
+.light-sweep {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    rgba(245, 245, 247, 0.9) 0%,
+    rgba(245, 245, 247, 1) 45%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(245, 245, 247, 1) 55%,
+    rgba(245, 245, 247, 0.9) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: lightSweep 4s ease-in-out infinite;
+  will-change: background-position;
+}
+
+@keyframes lightSweep {
+  0%, 100% {
+    background-position: 200% center;
+  }
+  50% {
+    background-position: -200% center;
+  }
+}
+
+/* ============================================
+   GLASS EFFECT — Frosted glass panels
+   backdrop-filter for depth and elegance
+   ============================================ */
+.glass {
+  background: rgba(20, 20, 20, 0.6);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(245, 245, 247, 0.08);
+}
+
+.glass-light {
+  background: rgba(245, 245, 247, 0.05);
+  -webkit-backdrop-filter: blur(40px) saturate(150%);
+  backdrop-filter: blur(40px) saturate(150%);
+  border: 1px solid rgba(245, 245, 247, 0.06);
+}
+
+/* ============================================
+   HORIZONTAL GLOW — Subtle ambient light
+   Minimal, elegant, never overpowering
+   ============================================ */
+.glow-line {
+  position: relative;
+}
+
+.glow-line::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 245, 247, 0.3) 50%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+/* ============================================
+   EDITORIAL IMAGE STYLES
+   Premium photo presentation
+   ============================================ */
+.editorial-image {
+  will-change: transform, opacity;
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.editorial-image:hover {
+  transform: scale(1.02);
+}
+
+/* Image overlay for depth */
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 60%,
+    rgba(10, 10, 10, 0.4) 100%
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* ============================================
+   SCROLL INDICATOR — Minimal, elegant
+   ============================================ */
+.scroll-indicator {
+  animation: scrollPulse 2s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(8px);
+  }
+}
+
+/* ============================================
+   TEXT REVEAL — Smooth emergence
+   ============================================ */
+.text-reveal {
+  will-change: opacity, transform;
+}
+
+/* ============================================
+   SECTION DIVIDER — Subtle separation
+   ============================================ */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 245, 247, 0.1) 20%,
+    rgba(245, 245, 247, 0.1) 80%,
+    transparent 100%
+  );
+}
+
+/* ============================================
+   BLEND MODE EFFECTS — Depth & texture
+   ============================================ */
+.blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+.blend-soft-light {
+  mix-blend-mode: soft-light;
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   60fps guaranteed
+   ============================================ */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .light-sweep {
+    animation: none;
+    background-position: 0 center;
+  }
+  
+  .scroll-indicator {
+    animation: none;
+  }
+  
+  .editorial-image {
+    transition: none;
+  }
+  
+  .editorial-image:hover {
+    transform: none;
+  }
+}
+
+/* ============================================
+   LIGHT THEME — Glass & Premium Effects
+   For light backgrounds
+   ============================================ */
+.glass-white {
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-dark {
+  background: rgba(10, 10, 10, 0.85);
+  -webkit-backdrop-filter: blur(30px) saturate(150%);
+  backdrop-filter: blur(30px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
+   LIGHT SWEEP DARK — For dark backgrounds
+   ============================================ */
+.light-sweep-dark {
+  position: relative;
+  overflow: hidden;
+}
+
+.light-sweep-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: lightSweepMove 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes lightSweepMove {
+  0% { left: -100%; }
+  50% { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* ============================================
+   CALENDAR PREMIUM STYLES
+   Luxury silent design
+   ============================================ */
+.calendar-day {
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform, box-shadow;
+}
+
+.calendar-day:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  position: relative;
+}
+
+.calendar-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+}
+
+/* ============================================
+   CARD HOVER EFFECTS — Editorial style
+   ============================================ */
+.card-editorial {
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform, box-shadow;
+}
+
+.card-editorial:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+/* ============================================
+   SUBTLE GLOW EFFECTS
+   ============================================ */
+.glow-top {
+  position: relative;
+}
+
+.glow-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+}
+
+/* ============================================
+   FLOATING ANIMATION — Subtle depth
+   ============================================ */
+.float-subtle {
+  animation: floatSubtle 6s ease-in-out infinite;
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ============================================
+   PARALLAX READY — GPU acceleration
+   ============================================ */
+.parallax-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
