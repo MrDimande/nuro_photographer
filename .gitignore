@@ -52,3 +52,17 @@ supabase/.temp
 
 # TypeScript cache
 *.tsbuildinfo
+
+# Ignore the problematic large file
+public/AQMkaXuAPmJyMY0h-jTJasHRC_qRgTmXPXPxm0Dfe8xtjR72OBUPCC2FlqTG7F5pifUE5eQa0Pt6QwDfqnGwLdfQcC9YMsmQ1uzY.gif
+
+# Ignore heavy media in public
+public/**/*.mp4
+public/**/*.mov
+public/**/*.avi
+public/**/*.mkv
+public/**/*.webm
+public/**/*.zip
+public/**/*.psd
+public/**/*.tiff
+public/**/*.raw
