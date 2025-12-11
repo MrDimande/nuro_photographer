@@ -1,11 +1,29 @@
-echo "# nuro_photographer" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/MrDimande/nuro_photographer.git
-git push -u origin main
+# Auto detect text files and perform LF normalization
+* text=auto
 
-git remote add origin https://github.com/MrDimande/nuro_photographer.git
-git branch -M main
-git push -u origin main
+# JavaScript/JSX
+*.js text eol=lf
+*.jsx text eol=lf
+
+# CSS
+*.css text eol=lf
+
+# JSON
+*.json text eol=lf
+
+# HTML
+*.html text eol=lf
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.svg text eol=lf
+
+# Fonts
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
